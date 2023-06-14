@@ -1,0 +1,311 @@
+USE [WeddingManagementSystemDatabase]
+GO
+
+/****** Object:  Table [dbo].[BookingTable]    Script Date: 09/16/2020 17:50:54 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[BookingTable](
+	[ID] [int] IDENTITY(1,1) NOT NULL,
+	[BookingID] [nvarchar](10) NULL,
+	[VenueName] [nvarchar](50) NULL,
+	[VenuePrice] [int] NULL,
+	[DecorationName] [nvarchar](50) NULL,
+	[DecorationPrice] [int] NULL,
+	[EntertainmentName] [nvarchar](50) NULL,
+	[EntertainmentPrice] [int] NULL,
+	[HotelName] [nvarchar](50) NULL,
+	[HotelPrice] [int] NULL,
+	[LocationName] [nvarchar](50) NULL,
+	[LocationPrice] [int] NULL,
+	[PhotoshootName] [nvarchar](50) NULL,
+	[PhotoshootPrice] [int] NULL,
+	[VideoShootName] [nvarchar](50) NULL,
+	[VideoShootPrice] [int] NULL,
+	[WeddingDate] [date] NULL,
+	[NoOfMemeber] [int] NULL,
+	[Total] [int] NULL,
+	[AdvancePayment] [money] NULL,
+	[PaymentType] [nvarchar](50) NULL,
+	[PaymentStatus] [nvarchar](50) NULL,
+	[DateOfPayment] [datetime] NULL,
+	[UserId] [nvarchar](50) NULL,
+	[UserMail] [nvarchar](50) NULL,
+	[UserMobile] [nvarchar](50) NULL,
+	[Preferedby] [nvarchar](100) NULL,
+	[Balance] [money] NULL
+) ON [PRIMARY]
+
+GO
+USE [WeddingManagementSystemDatabase]
+GO
+
+/****** Object:  Table [dbo].[DecorationTable]    Script Date: 09/16/2020 17:51:15 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[DecorationTable](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[DecorationID] [nvarchar](10) NULL,
+	[DecorationName] [nvarchar](50) NULL,
+	[DecorationPrice] [int] NULL,
+	[DecorationImage] [varbinary](max) NULL,
+	[ContentType] [nvarchar](50) NULL,
+	[EnterBy] [nvarchar](50) NULL,
+	[EnterOn] [date] NULL
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+
+USE [WeddingManagementSystemDatabase]
+GO
+
+/****** Object:  Table [dbo].[EntertainmentTable]    Script Date: 09/16/2020 17:51:29 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[EntertainmentTable](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[EntertainmentId] [nvarchar](10) NULL,
+	[EntertainmentName] [nvarchar](50) NULL,
+	[EntertainmentPrice] [int] NULL,
+	[EntertainmentDescription] [nvarchar](max) NULL,
+	[EntertainmentImage] [varbinary](max) NULL,
+	[ContentType] [nvarchar](50) NULL,
+	[EnterBy] [nvarchar](50) NULL,
+	[EnterOn] [date] NULL
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+USE [WeddingManagementSystemDatabase]
+GO
+
+/****** Object:  Table [dbo].[FeedbackTable]    Script Date: 09/16/2020 17:51:40 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[FeedbackTable](
+	[ID] [int] IDENTITY(1,1) NOT NULL,
+	[UserMail] [nvarchar](50) NULL,
+	[Feedback] [nvarchar](max) NULL
+) ON [PRIMARY]
+
+GO
+
+USE [WeddingManagementSystemDatabase]
+GO
+
+/****** Object:  Table [dbo].[ForgotPassRequests]    Script Date: 09/16/2020 17:51:51 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[ForgotPassRequests](
+	[Id] [uniqueidentifier] NOT NULL,
+	[Uid] [int] NULL,
+	[RequestDateTime] [datetime] NULL
+) ON [PRIMARY]
+
+GO
+
+USE [WeddingManagementSystemDatabase]
+GO
+
+/****** Object:  Table [dbo].[HotelTable]    Script Date: 09/16/2020 17:52:00 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[HotelTable](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[HotelId] [nvarchar](10) NULL,
+	[HotelName] [nvarchar](50) NULL,
+	[HotelAddress] [nvarchar](max) NULL,
+	[HotelPrice] [int] NULL,
+	[HotelImage] [varbinary](max) NULL,
+	[ContentType] [nvarchar](50) NULL,
+	[EnterBy] [nvarchar](50) NULL,
+	[EnterOn] [date] NULL
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+USE [WeddingManagementSystemDatabase]
+GO
+
+/****** Object:  Table [dbo].[LocationTable]    Script Date: 09/16/2020 17:52:14 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[LocationTable](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[LocationId] [nvarchar](10) NULL,
+	[LocationName] [nvarchar](max) NULL,
+	[LocationPrice] [int] NULL,
+	[LocationImage] [varbinary](max) NULL,
+	[ContentType] [nvarchar](50) NULL,
+	[EnterBy] [nvarchar](50) NULL,
+	[EnterOn] [date] NULL
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+USE [WeddingManagementSystemDatabase]
+GO
+
+/****** Object:  Table [dbo].[PhotoshootTable]    Script Date: 09/16/2020 17:52:23 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[PhotoshootTable](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[PhotoshootId] [nvarchar](10) NULL,
+	[PhotoshootName] [nvarchar](50) NULL,
+	[PhotoshootPrice] [int] NULL,
+	[PhotoshootImage] [varbinary](max) NULL,
+	[ContentType] [nvarchar](50) NULL,
+	[EnterBy] [nvarchar](50) NULL,
+	[EnterOn] [date] NULL
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+USE [WeddingManagementSystemDatabase]
+GO
+
+/****** Object:  Table [dbo].[RegistrationTable]    Script Date: 09/16/2020 17:52:32 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[RegistrationTable](
+	[ID] [int] IDENTITY(1,1) NOT NULL,
+	[FirstName] [nvarchar](50) NULL,
+	[LastName] [nvarchar](50) NULL,
+	[Email] [nvarchar](50) NULL,
+	[MobileNumber] [nvarchar](50) NULL,
+	[Location] [nvarchar](50) NULL,
+	[Password] [nvarchar](50) NULL,
+	[ConfirmPassword] [nvarchar](50) NULL,
+	[UserLevel] [nvarchar](50) NULL
+) ON [PRIMARY]
+
+GO
+
+USE [WeddingManagementSystemDatabase]
+GO
+
+/****** Object:  Table [dbo].[VenueTable]    Script Date: 09/16/2020 17:52:41 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[VenueTable](
+	[ID] [int] IDENTITY(1,1) NOT NULL,
+	[VID] [nvarchar](50) NULL,
+	[VenueName] [nvarchar](50) NULL,
+	[VenueAddress] [nvarchar](max) NULL,
+	[Capcity] [int] NULL,
+	[Preferedby] [nvarchar](50) NULL,
+	[Price] [int] NULL,
+	[VenueImage] [varbinary](max) NULL,
+	[ContentType] [nvarchar](50) NULL,
+	[EnterBy] [nvarchar](50) NULL,
+	[EnterOn] [date] NULL
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+USE [WeddingManagementSystemDatabase]
+GO
+
+/****** Object:  Table [dbo].[VideoShootTable]    Script Date: 09/16/2020 17:52:48 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[VideoShootTable](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[VideoShootId] [nvarchar](10) NULL,
+	[VideoShootName] [nvarchar](50) NULL,
+	[VideoShootPrice] [int] NULL,
+	[VideoShootImage] [varbinary](max) NULL,
+	[ContentType] [nvarchar](50) NULL,
+	[EnterBy] [nvarchar](50) NULL,
+	[EnterOn] [date] NULL
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
